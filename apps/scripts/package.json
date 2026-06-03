@@ -1,0 +1,12 @@
+{
+  "name": "@local/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@local/stdlib": "workspace:*",
+    "@sapphire/snowflake": "3.5.5",
+    "date-fns": "4.1.0",
+    "slugify": "1.6.9"
+  }
+}

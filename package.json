@@ -1,0 +1,44 @@
+{
+  "name": "ts-mono-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript monorepo project template with SOTA Rust-based tooling.",
+  "homepage": "https://github.com/raphaeldiscky/ts-template#readme",
+  "bugs": {
+    "url": "https://github.com/raphaeldiscky/ts-template/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaeldiscky/ts-template.git"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "build": "tsdown"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "20.5.3",
+    "@commitlint/config-conventional": "20.5.3",
+    "@commitlint/types": "20.5.0",
+    "@manypkg/cli": "0.25.1",
+    "@ocular-d/typos-bin": "1.46.0",
+    "@tsconfig/node22": "22.0.5",
+    "@tsconfig/strictest": "2.0.8",
+    "@types/node": "25.6.1",
+    "@typescript/native-preview": "7.0.0-dev.20260421.2",
+    "@vitest/coverage-v8": "4.0.17",
+    "husky": "9.1.7",
+    "oxfmt": "0.48.0",
+    "oxlint": "1.63.0",
+    "publint": "0.3.19",
+    "syncpack": "15.0.0",
+    "tsdown": "0.22.0",
+    "tsx": "4.21.0",
+    "typescript": "6.0.3",
+    "vitest": "4.0.17"
+  },
+  "packageManager": "pnpm@11.0.8"
+}

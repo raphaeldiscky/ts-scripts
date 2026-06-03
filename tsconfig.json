@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": [
+    "libraries/**/src/**/*.ts",
+    "apps/**/src/**/*.ts",
+    "commitlint.config.ts",
+    "tsdown.config.ts",
+    "vitest.config.ts"
+  ]
+}

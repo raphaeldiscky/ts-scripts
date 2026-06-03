@@ -1,0 +1,7 @@
+packages:
+  - "libraries/*"
+  - "apps/*"
+
+allowBuilds:
+  "@ocular-d/typos-bin": true
+  esbuild: true

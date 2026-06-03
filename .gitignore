@@ -1,0 +1,55 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Local data (kept out of version control)
+secrets/
+data/sources/*
+!data/sources/.gitkeep
+data/results/*
+!data/results/.gitkeep
+
+# Diagnostic reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+*.lcov
+.nyc_output
+
+# Dependencies
+node_modules/
+
+# TypeScript build output
+*.tsbuildinfo
+dist/
+**/dist/
+
+# npm/yarn metadata we don't use (project is pnpm-only)
+package-lock.json
+yarn.lock
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+.claude/
+
+# dotenv
+.env
+.env.*.local
+.env.local

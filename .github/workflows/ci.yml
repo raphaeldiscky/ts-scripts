@@ -1,0 +1,52 @@
+name: CI
+
+on: [push]
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.x
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Format Check
+        run: task format:check
+
+      - name: Lint
+        run: task lint
+
+      - name: Typecheck
+        run: task typecheck
+
+      - name: Test
+        run: task test:coverage
+
+      - name: Bundle
+        run: task bundle
+
+      - name: Consistency
+        run: task check:consistency
+
+      - name: Spell check
+        run: task typos

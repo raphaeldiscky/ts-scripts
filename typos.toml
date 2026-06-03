@@ -1,0 +1,4 @@
+[default.extend-words]
+
+[files]
+extend-exclude = ["node_modules", "pnpm-lock.yaml", "dist", "scripts/data"]

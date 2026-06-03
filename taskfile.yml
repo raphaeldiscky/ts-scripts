@@ -1,0 +1,79 @@
+version: "3"
+
+tasks:
+  install_tools:
+    desc: Install all dependencies and set up git hooks
+    cmds:
+      - chmod +x ./scripts/install-tools.sh
+      - ./scripts/install-tools.sh
+
+  format:
+    desc: Format the workspace with oxfmt
+    cmds:
+      - pnpm exec oxfmt --write .
+
+  format:check:
+    desc: Check formatting with oxfmt (no writes)
+    cmds:
+      - pnpm exec oxfmt --check .
+
+  lint:
+    desc: Run oxlint
+    cmds:
+      - pnpm exec oxlint .
+
+  lint:fix:
+    desc: Auto-fix lint violations with oxlint
+    cmds:
+      - pnpm exec oxlint --fix .
+
+  typecheck:
+    desc: Type-check with tsgo (TypeScript 7 beta)
+    cmds:
+      - pnpm exec tsgo --noEmit
+
+  test:
+    desc: Run unit tests with Vitest
+    cmds:
+      - pnpm exec vitest run
+
+  test:coverage:
+    desc: Run unit tests with coverage (v8) and enforce thresholds
+    cmds:
+      - pnpm exec vitest run --coverage
+
+  bundle:
+    desc: Bundle libraries with tsdown (per-package dist/)
+    cmds:
+      - pnpm exec tsdown
+
+  check:consistency:
+    desc: Validate monorepo consistency (deps, workspace structure, publish shape)
+    deps: [bundle]
+    cmds:
+      - pnpm exec syncpack lint
+      - pnpm exec manypkg check
+      - pnpm exec publint libraries/stdlib --strict
+
+  check:consistency:fix:
+    desc: Auto-fix syncpack version mismatches and dep ordering
+    cmds:
+      - pnpm exec syncpack fix-mismatches
+      - pnpm exec syncpack format
+
+  typos:
+    desc: Spell-check source with typos
+    cmds:
+      - pnpm exec typos
+
+  typos:fix:
+    desc: Auto-fix spelling with typos -w
+    cmds:
+      - pnpm exec typos -w
+
+  app:
+    desc: "Run a TS script (e.g. `task app FILE=slugify`)"
+    requires:
+      vars: [FILE]
+    cmds:
+      - pnpm exec tsx apps/scripts/src/{{.FILE}}.ts
