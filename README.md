@@ -1,6 +1,6 @@
 # ts-mono-template
 
-TypeScript monorepo template — pnpm workspaces (Internal Packages) + `tsdown` (Rolldown-based) + `vitest` + `oxlint` + `oxfmt` + TypeScript 7 (`tsgo`) + `task` + husky + commitlint, with `syncpack` + `@manypkg/cli` + `publint` for consistency checks.
+TypeScript monorepo template — pnpm workspaces (Internal Packages) + `tsdown` (Rolldown-based) + `vitest` + `oxlint` + `oxfmt` + TypeScript 7 (`tsgo`) + `task` + lefthook + commitlint, with `syncpack` + `@manypkg/cli` + `publint` for consistency checks.
 
 ## Setup
 
@@ -95,4 +95,5 @@ Create `libraries/<name>/{src/index.ts, package.json, tsconfig.json}` mirroring
 `libraries/stdlib/`. Set `"name": "@local/<name>"`, declare deps, and the
 `tsdown.config.ts` `workspace: "libraries/*"` glob will pick it up
 automatically. Consumers depend on it via `"@local/<name>": "workspace:*"`.
+
 # ts-scripts

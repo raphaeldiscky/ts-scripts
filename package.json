@@ -14,7 +14,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky",
+    "prepare": "lefthook install",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "build": "tsdown"
@@ -30,7 +30,7 @@
     "@types/node": "25.6.1",
     "@typescript/native-preview": "7.0.0-dev.20260421.2",
     "@vitest/coverage-v8": "4.0.17",
-    "husky": "9.1.7",
+    "lefthook": "2.1.9",
     "oxfmt": "0.48.0",
     "oxlint": "1.63.0",
     "publint": "0.3.19",

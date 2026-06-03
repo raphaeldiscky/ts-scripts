@@ -5,3 +5,4 @@ packages:
 allowBuilds:
   "@ocular-d/typos-bin": true
   esbuild: true
+  lefthook: true

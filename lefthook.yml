@@ -1,0 +1,24 @@
+# https://lefthook.dev/configuration/
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm exec commitlint --edit {1}
+
+pre-commit:
+  piped: true
+  commands:
+    format:
+      priority: 1
+      run: task format
+    lint:
+      priority: 2
+      run: task lint
+    stage:
+      priority: 3
+      run: git add -A .
+
+pre-push:
+  commands:
+    lint:
+      run: task lint
