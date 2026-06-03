@@ -1,6 +1,6 @@
 # ts-scripts
 
-TypeScript monorepo template — pnpm workspaces (Internal Packages) + `tsdown` (Rolldown-based) + `vitest` + `oxlint` + `oxfmt` + TypeScript 7 (`tsgo`) + `task` + lefthook + commitlint, with `syncpack` + `@manypkg/cli` + `publint` for consistency checks.
+TypeScript template — pnpm workspaces (Internal Packages) + `tsdown` (Rolldown-based) + `vitest` + `oxlint` + `oxfmt` + TypeScript 7 (`tsgo`) + `task` + lefthook + commitlint, with `syncpack` + `@manypkg/cli` + `publint` for consistency checks.
 
 ## Setup
 

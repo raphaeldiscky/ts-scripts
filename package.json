@@ -2,7 +2,7 @@
   "name": "ts-scripts",
   "version": "1.0.0",
   "private": true,
-  "description": "TypeScript monorepo project template with SOTA Rust-based tooling.",
+  "description": "TypeScript project template with SOTA Rust-based tooling.",
   "homepage": "https://github.com/raphaeldiscky/ts-template#readme",
   "bugs": {
     "url": "https://github.com/raphaeldiscky/ts-template/issues"
