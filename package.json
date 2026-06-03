@@ -1,5 +1,5 @@
 {
-  "name": "ts-mono-template",
+  "name": "ts-scripts",
   "version": "1.0.0",
   "private": true,
   "description": "TypeScript monorepo project template with SOTA Rust-based tooling.",
